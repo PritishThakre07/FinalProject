@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class Ledger {
 	
 	@Id
-	@GeneratedValue(strategy =GenerationType.IDENTITY )
+	@GeneratedValue(strategy=GenerationType.IDENTITY )
 	private Integer ledgerId;
 	
 	private String ledgerCreatedDate;

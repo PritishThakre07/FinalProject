@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class EmailSender 
 {
-  private String formEmailId;
+  private String fromEmailId;
   
   private String toEmailId;
   
