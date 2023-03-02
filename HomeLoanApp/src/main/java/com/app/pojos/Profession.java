@@ -34,7 +34,7 @@ public class Profession {
 	
 	@Lob
 	private byte[] professionsalaryslips;
-
+	
 
 }
 

@@ -44,12 +44,18 @@ public class CustomerController {
 	@Autowired
 	private EnquiryDetailsServiceI enquiryDetailsServiceI;
 	
-//	@PostMapping(value="/customer")
+//	@PostMapping(value="/onecustomer")
 //	public Customer saveCustomer(@RequestBody Customer customer)
 //	{
 //		Customer cust=customerServiceInterface.saveCustomer(customer);
 //		return cust;
 //	}
+	
+//	The main difference is that when the method argument is not a Stringor raw MultipartFile / Part, 
+//	@RequestParam relies on typeconversion via a registered Converter or PropertyEditor 
+//	while RequestPart relies on HttpMessageConverterstaking into consideration the 'Content-Type' header of the request part.
+//	RequestParam is likely to be used with name-value form fields 
+//	while RequestPart is likely to be used with parts containing more complex contente.g. JSON, XML).
 	
 	@PostMapping(value="/customer",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public String saveCustomer(@RequestPart("addressProof")MultipartFile file1,
@@ -68,6 +74,7 @@ public class CustomerController {
 			@RequestPart("priceProofs")MultipartFile file14,
 			@RequestPart("cust")String cust) throws JsonMappingException, JsonProcessingException
 	{
+		//ObjectMapper provides functionality for reading and writing JSON
 		ObjectMapper objectMapper= new ObjectMapper();
 		
 		 Customer customer = objectMapper.readValue(cust, Customer.class);
@@ -134,6 +141,7 @@ public class CustomerController {
 //			customer.getProfession().setProfessionsalaryslips(file12.getBytes());
 //			customer.getPropertyinfo().setPropertyDocuments(file13.getBytes());
 //			customer.getPropertyinfo().setPriceProofs(file14.getBytes());
+	    	
 			 Customer custom= customerServiceInterface.saveCustomer(customer);
 			return "saved Successfully";
 			
@@ -144,7 +152,7 @@ public class CustomerController {
 		}
 	}
 	
-	@GetMapping(value="/customer")
+	@GetMapping(value="/allcustomer")
 	public List<Customer> getAllCustomer()
 	{
 		List<Customer> cust=customerServiceInterface.getAllCustomer();
@@ -214,9 +222,9 @@ public class CustomerController {
 	
 	
 	@PutMapping(value="/defaultcounter/{customerId}")
-	public String defaultCounter(@RequestBody Customer customer, @PathVariable ("customerId") Integer customerId)
+	public String defaulterCounter(@RequestBody Customer customer, @PathVariable ("customerId") Integer customerId)
 	{
-		Customer cust=customerServiceInterface.defaultCounter(customer, customerId);
+		Customer cust=customerServiceInterface.defaulterCounter(customer,customerId);
 		return "ADDED IN DEFAULT COUNTER";
 		
 	}

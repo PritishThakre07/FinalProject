@@ -31,7 +31,7 @@ public interface CustomerServiceInterface {
 
 	public Customer sactionletteraccepted(Customer customer,Integer customerId);
 
-	public Customer defaultCounter(Customer customer, Integer customerId);
+	public Customer defaulterCounter(Customer customer, Integer customerId);
 
 	
 	

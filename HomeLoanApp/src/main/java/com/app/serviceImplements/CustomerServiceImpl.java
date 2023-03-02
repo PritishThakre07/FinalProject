@@ -93,7 +93,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		
 		rateofInterest=rateofInterest/(12*100);
 		
-		emiAmount=  (loanamount*rateofInterest*Math.pow(1+rateofInterest, tenure))/(Math.pow(1+rateofInterest,tenure)-1)  ;
+		emiAmount= (loanamount*rateofInterest*Math.pow(1+rateofInterest, tenure))/(Math.pow(1+rateofInterest,tenure)-1)  ;
 		System.out.println("Emi Amount"+emiAmount);
 		
 		
@@ -180,7 +180,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 	}
 
 	@Override
-	public Customer defaultCounter(Customer customer, Integer customerId) {
+	public Customer defaulterCounter(Customer customer, Integer customerId) {
 		customer.setCustomerId(customerId);
 		return custoRepository.save(customer);
 	}
