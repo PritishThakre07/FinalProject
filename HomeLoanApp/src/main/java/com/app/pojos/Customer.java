@@ -41,29 +41,21 @@ public class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	private EducationalInformation educationalInfo;
 	
-	@OneToOne(cascade = CascadeType.PERSIST)
-	private AllPersonalDocuments allpersonalDoc;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private DependentInfo familydependentInfo;
+	
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private CustomerAddress customerAddress;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	private MortgageDetails mortgageDetails;
-	
-	@OneToOne(cascade = CascadeType.ALL)
 	private Profession profession;
 	
-//	@OneToOne(cascade = CascadeType.ALL)
-//	private Cibil cibilscore;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-	private CurrentLoanDetails currentloandetails;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private PreviousLoan previousloan;
+	
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private AccountDetails accountdetails;
@@ -71,8 +63,40 @@ public class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	private PropertyInfo propertyinfo;
 	
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private GuarantorDetails gurantordetails;
+	
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private MortgageDetails mortgageDetails;
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private CurrentLoanDetails currentloandetails;
+	
+	
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	private AllPersonalDocuments allpersonalDoc;
+	
+	
+	
+	
+	
+//	@OneToOne(cascade = CascadeType.ALL)
+//	private Cibil cibilscore;
+	
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private CustomerVerification customerverification;
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private SanctionLetter sanctionletter;
+	
+	
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private LoanDisbursement loandisbursement;
@@ -80,11 +104,7 @@ public class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Ledger ledger;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private SanctionLetter sanctionletter;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private CustomerVerification customerverification;
 	
 	
 }

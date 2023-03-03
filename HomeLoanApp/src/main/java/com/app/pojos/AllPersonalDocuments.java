@@ -23,8 +23,8 @@ public class AllPersonalDocuments {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer documentID;
 	
-	@Lob       //Specifies that a persistent property or field should be
          	  //persistedas a large object to a database-supported large object type. 
+	@Lob       //Specifies that a persistent property or field should be
 	private byte[] addressProof;
 	
 	@Lob

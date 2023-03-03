@@ -20,13 +20,21 @@ public class GuarantorDetails {
 	private Integer guarantorId;
 	
 	private String guarantorName;
+	
 	private Long guarantorMobileNumber;
+	
 	private String guarantorDateOfBirth;
+	
 	private String guarantorRelationshipwithCustomer;
+	
 	private Long guarantorAdharCardNo;
+	
 	private String guarantorMortgageDetails ;
+	
 	private String guarantorJobDetails;
+	
 	private String guarantorLoaclAddress;
+	
 	private String guarantorPermanentAddress;
 
 }

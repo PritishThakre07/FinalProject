@@ -18,10 +18,15 @@ public class AccountDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Integer accountId;
+	
     private String accounType;
+    
     private Double accountBalance;
+    
     private String accountHolderName;
+    
     private String accountStatus;
+    
     private Long accountNumber;	
 
 }

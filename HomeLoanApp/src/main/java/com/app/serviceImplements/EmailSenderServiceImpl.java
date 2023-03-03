@@ -151,7 +151,7 @@ public class EmailSenderServiceImpl implements EmailSenderServiceI
 				+"<br><b>Best Regards,</b>"
 		        +"<br>Loan Officer,"
 		        +"<br>ETHICAL HOME LOAN,"
-		        +"<br>Email id : ethicalhomeloan@gmail.com"
+		        +"<br>Email id : loan@gmail.com"
 		        +"<br>Pune.";	
 		
 		String sendto=customer.getCustomerEmail();
@@ -159,7 +159,7 @@ public class EmailSenderServiceImpl implements EmailSenderServiceI
 		
 		String subject="Sanction Letter";
 		
-//		String sendFrom="ethicalhomeloan@gmail.com";
+//		String sendFrom="ethicaan@gmail.com";
 		
 		
 	  MimeMessage meMimeMsg= jms.createMimeMessage();	
@@ -177,6 +177,7 @@ public class EmailSenderServiceImpl implements EmailSenderServiceI
 		  helper.addInline("image001", resource);
 		  
 //		  FileSystemResource file=new FileSystemResource("C:\\Users\\HP\\Downloads\\Spring Boot Notes\\Untitled.jpg");
+		  
 		  helper.addAttachment("sanctionLetter.pdf", sanctionLetter);
 		  
 		 jms.send(meMimeMsg);

@@ -19,11 +19,17 @@ public class PropertyAddress {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer propertyAddressId;
+	
 	private String areaname;
+	
 	private String cityname;
+	
 	private String district;
+	
 	private String state;
+	
 	private Long pincode;
+	
 	private String streetName;
 
 	

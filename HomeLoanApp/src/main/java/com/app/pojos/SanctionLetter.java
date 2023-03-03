@@ -18,6 +18,7 @@ public class SanctionLetter {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Integer sanctionId;
+	
 	private String sanctionDate;
 	
 	private String applicantName;

@@ -68,8 +68,11 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 	public ResponseEntity<Customer> sanctionLoan(Customer customer, Integer customerId) {
 		
 		Double loanamount=customer.getCurrentloandetails().getLoanAmount();
+		
 		Integer tenure = customer.getCurrentloandetails().getTenure();
+		
 		Double rateofInterest= customer.getCurrentloandetails().getRateOfInterest();
+		
 		Double roi=rateofInterest;
 		
 		
@@ -118,7 +121,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		customer.getCurrentloandetails().getEmidetails().setEmiAmountMonthly(emiAmount);
 		
 		
-		//Sanction Letter Set Values
+		    //Sanction Letter Set Values
 				customer.getSanctionletter().setApplicantName(customer.getCustomerName());
 				customer.getSanctionletter().setSanctionDate(sanctionDate);
 				customer.getSanctionletter().setLoanAmtSanctioned(loanamount);
@@ -135,7 +138,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 				return new ResponseEntity<Customer>(cust, HttpStatus.CREATED);
 		}
 		else {
-			throw new ValueNotValidException("Value For Loan Calculation not Valid");
+			throw new ValueNotValidException("Value For Loan Calculation Not Valid");
 		}
 	}
 
@@ -173,11 +176,16 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		return custoRepository.save(customer);
 	}
 
+	
 	@Override
-	public Customer sactionletteraccepted(Customer customer, Integer customerId) {
+	public Customer sactionletteraccepted(Customer customer,Integer customerId) {
+		
 		customer.setCustomerId(customerId);
+		
 		return custoRepository.save(customer);
 	}
+	
+	
 
 	@Override
 	public Customer defaulterCounter(Customer customer, Integer customerId) {

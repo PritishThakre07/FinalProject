@@ -25,21 +25,21 @@ public class LocalAddressController
 	@PostMapping("/localaddress")
 	public LocalAddress saveLocalAddress(@RequestBody LocalAddress ld)
 	{
-		LocalAddress ad=lai.saveLocalAddress(ld);
+		LocalAddress ad = lai.saveLocalAddress(ld);
 		return ad;
 	}
 	
 	@GetMapping("/localaddress")
 	public Iterable<LocalAddress> getAllLocalAddress()
 	{
-		Iterable<LocalAddress> list=lai.getAllLocalAddress();
+		Iterable<LocalAddress> list = lai.getAllLocalAddress();
 		return list;
 	}
 	
 	@PutMapping("/localaddress/{localAddressId}")
 	public LocalAddress updateLocalAddress(@PathVariable Integer localAddressId,@RequestBody LocalAddress add)
 	{
-		LocalAddress localadd=lai.updateLocalAddress(localAddressId,add);
+		LocalAddress localadd = lai.updateLocalAddress(localAddressId,add);
 		return localadd;
 	}
 	

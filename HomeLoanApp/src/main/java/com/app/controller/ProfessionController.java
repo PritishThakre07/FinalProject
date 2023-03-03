@@ -26,6 +26,7 @@ public class ProfessionController {
 	
 	@Autowired
 	private ProfessionServiceI professionServiceInterface;
+	
 	//http://localhost:8080/Profession/profession
 	
 	@PostMapping(value="/profession", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -55,6 +56,7 @@ public class ProfessionController {
 		
 	}
 	
+	
 	@GetMapping(value="/profession",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public List<Profession> getAllProfession()
 	{
@@ -62,8 +64,9 @@ public class ProfessionController {
 		     return profession;
 	}
 	
+	
 	@GetMapping(value="/profession/{professionid}")
-	public Profession getSingleProfession(@PathVariable ("professionid")Integer professionid)
+	public Profession getSingleProfession(@PathVariable("professionid")Integer professionid)
 	{
 		Profession pro=professionServiceInterface.getSingleProfession(professionid);
 		return pro;

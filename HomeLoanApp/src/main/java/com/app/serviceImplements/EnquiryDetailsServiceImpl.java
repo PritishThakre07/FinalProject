@@ -27,7 +27,7 @@ public class EnquiryDetailsServiceImpl implements EnquiryDetailsServiceI {
 	@Override
 	public EnquiryDetails getSingleEnquiryDetails(int id)
 	{
-	   Optional<EnquiryDetails> e1=edr.findById(id);
+	   Optional<EnquiryDetails> e1 = edr.findById(id);
 		return e1.get();
 	}
 

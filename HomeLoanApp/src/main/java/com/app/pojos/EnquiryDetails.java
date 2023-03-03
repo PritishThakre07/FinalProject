@@ -27,7 +27,7 @@ public class EnquiryDetails {
     private String pancardNo;
     private String mailSent;
     
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade=CascadeType.ALL)
 	private Cibil cibil;
 }
 

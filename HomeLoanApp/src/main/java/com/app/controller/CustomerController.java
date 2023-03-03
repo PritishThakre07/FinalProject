@@ -78,6 +78,7 @@ public class CustomerController {
 		ObjectMapper objectMapper= new ObjectMapper();
 		
 		 Customer customer = objectMapper.readValue(cust, Customer.class);
+		 
 	    try {
 	    	
 	    	AllPersonalDocuments apd=new AllPersonalDocuments();
@@ -99,6 +100,7 @@ public class CustomerController {
 	    	details.setMortgagePropertyValue(customer.getMortgageDetails().getMortgagePropertyValue());
 	    	details.setMortgagePropertyProof(file10.getBytes());
 	    	details.setMortgagePropertyInsurance(file11.getBytes());
+	    	
 	    	customer.setMortgageDetails(details);
 	    	
 	    	Profession pro=new Profession();
@@ -125,7 +127,7 @@ public class CustomerController {
 	    	
 	    	System.out.println("ENQUIRY ID "+customer.getEnquiryDetails().getId());
 	    	
-	    	EnquiryDetails enq=enquiryDetailsServiceI.getSingleEnquiryDetails(customer.getEnquiryDetails().getId());
+	    	EnquiryDetails enq = enquiryDetailsServiceI.getSingleEnquiryDetails(customer.getEnquiryDetails().getId());
 	    	customer.setEnquiryDetails(enq);
 	    	
 //			customer.getAllpersonalDoc().setAddressProof(file1.getBytes());
@@ -190,7 +192,7 @@ public class CustomerController {
 	
 	
 	@PutMapping(value="/sanctionloan/{customerId}")
-	public ResponseEntity<Customer> sanctionLoan(@RequestBody Customer customer, @PathVariable ("customerId") Integer customerId)
+	public ResponseEntity<Customer> sanctionLoan(@RequestBody Customer customer,@PathVariable("customerId") Integer customerId)
 	{
 		
 		ResponseEntity<Customer> cust= customerServiceInterface.sanctionLoan(customer,customerId);
@@ -211,8 +213,8 @@ public class CustomerController {
 	public String sanctionletteraccepted(@RequestBody Customer customer, @PathVariable ("customerId") Integer customerId)
 	{
 		
-//		System.out.println("INN Sanction**************************************");
-		Customer cust=customerServiceInterface.sactionletteraccepted(customer, customerId);
+
+		Customer cust = customerServiceInterface.sactionletteraccepted(customer,customerId);
 		
 		return "Sanction Letter Accepted";
 		
@@ -224,7 +226,7 @@ public class CustomerController {
 	@PutMapping(value="/defaultcounter/{customerId}")
 	public String defaulterCounter(@RequestBody Customer customer, @PathVariable ("customerId") Integer customerId)
 	{
-		Customer cust=customerServiceInterface.defaulterCounter(customer,customerId);
+		Customer cust = customerServiceInterface.defaulterCounter(customer,customerId);
 		return "ADDED IN DEFAULT COUNTER";
 		
 	}
@@ -237,4 +239,51 @@ public class CustomerController {
 //		List<Customer> cust=customerServiceInterface.registrationApprovedList();
 //		return cust;
 //	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

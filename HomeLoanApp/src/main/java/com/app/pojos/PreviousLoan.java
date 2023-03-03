@@ -22,18 +22,23 @@ public class PreviousLoan {
 	@Id
 	private Integer previousLoanId;	
 	
-	private Double previousLoanAmount;	
-	private Integer previousLoanTenure;	
+	private Double previousLoanAmount;
+	
+	private Integer previousLoanTenure;
+	
 	private Double previousLoanpaidAmount;	
-	private Double previousLoanremainingAmount;	
+	
+	private Double previousLoanremainingAmount;
+	
 	private Integer previousLoandeafulterCount;
 	
-	private String previousLoanStatus;	
 	private String previousLoanRemark;	
+	
+	private String previousLoanStatus;	
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	 private PreviousLoanBank previousLoanbankDetails;	
+	private PreviousLoanBank previousLoanbankDetails;	
 
 
 }
