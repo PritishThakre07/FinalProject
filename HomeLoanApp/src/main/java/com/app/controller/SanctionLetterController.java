@@ -42,7 +42,7 @@ public class SanctionLetterController {
 	@GetMapping(value="/sanctionletter")
 	public List<SanctionLetter> getSanctionLetter()
 	{
-		List<SanctionLetter> sanctionletter=sanctionLetterserviceinterface.getSanctionLetter();
+		List<SanctionLetter> sanctionletter = sanctionLetterserviceinterface.getSanctionLetter();
 		return sanctionletter;
 		
 	}

@@ -178,7 +178,7 @@ public class EmailSenderServiceImpl implements EmailSenderServiceI
 		  
 //		  FileSystemResource file=new FileSystemResource("C:\\Users\\HP\\Downloads\\Spring Boot Notes\\Untitled.jpg");
 		  
-		  helper.addAttachment("sanctionLetter.pdf", sanctionLetter);
+		  helper.addAttachment("sanctionLetter.pdf",sanctionLetter);
 		  
 		 jms.send(meMimeMsg);
 		 

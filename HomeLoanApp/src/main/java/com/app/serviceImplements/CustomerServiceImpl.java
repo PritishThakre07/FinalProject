@@ -150,8 +150,9 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		
 //		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");  
-	    Date date = new Date();  
-		String ledgerDate=formatter.format(date);
+	    Date date = new Date(); 
+	    
+		String ledgerDate = formatter.format(date);
 		
 		customer.getLoandisbursement().setAmountPaidDate(ledgerDate);
 		
@@ -163,11 +164,15 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 		
 		
 		
-		Calendar today = new GregorianCalendar();
-		today.setTime(new Date());
-		int loanTenure=customer.getSanctionletter().getLoanTenure();
+		Calendar today = new GregorianCalendar(); 
+		
+		today.setTime(new Date()); 
+		
+		int loanTenure = customer.getSanctionletter().getLoanTenure();
+		
 		Calendar cal = Calendar.getInstance(); 
-		cal.add(Calendar.MONTH, loanTenure);
+		
+		cal.add(Calendar.MONTH,loanTenure);//Adding loanTenure month To Which Complete Date 
 		System.out.println("************************Date :"+cal.get(Calendar.DATE)+"-"+cal.get(Calendar.MONTH)+"-"+cal.get(Calendar.YEAR));
 		
 //		customer.getLedger().setLoanEndDate(cal.get(Calendar.DATE)+"/"+cal.get(Calendar.MONTH)+"/"+cal.get(Calendar.YEAR));

@@ -22,9 +22,13 @@ import com.app.service.EnquiryDetailsServiceI;
 @RequestMapping("/api")
 public class EnquiryDetailsContoller {
 	
+	
+	
 	@Autowired
 	private EnquiryDetailsServiceI edi;
 	
+	
+	//http://localhost:8080/api/enquiry
 	@PostMapping("/enquiry")
 	public EnquiryDetails saveEnquiryDetails(@RequestBody EnquiryDetails enqury)
 	{

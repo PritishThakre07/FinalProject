@@ -2,10 +2,14 @@ package com.app.pojos;
 
 
 
+import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.springframework.web.bind.annotation.PutMapping;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,13 +27,13 @@ public class Ledger {
 	
 	private String ledgerCreatedDate;
 	
-	private Double totalLoanAmount;
+	private Double totalLoanAmount; //customer.getSanctionletter().getLoanAmtSanctioned()
 	
-	private Double payableAmountwithInterest;
+	private Double payableAmountwithInterest;//customer.getCurrentloandetails().getTotalAmounttobepaidDouble()
 	
-	private Integer tenure;
+	private Integer tenure;//customer.getSanctionletter().getLoanTenure()
 	
-	private Double monthlyEMI;
+	private Double monthlyEMI;//customer.getSanctionletter().getMonthlyEmiAmount()
 	
 	private Double amountPaidtillDate;
 	
@@ -39,13 +43,13 @@ public class Ledger {
 	
 	private String nextEmiDateEnd;
 	
-	private Integer defaulterCount;
+	private Integer defaulterCount;//@PutMapping(value="/defaultcounter/{customerId}")
 	
 	private String previousEmitStatus;
 	
 	private String currentMonthEmiStatus;
 	
-	private String loanEndDate;
+	private String loanEndDate;//customer.getLedger().setLoanEndDate(cal.get(Calendar.YEAR)+"-"+cal.get(Calendar.MONTH)+"-"+cal.get(Calendar.DATE));
 	
 	private String loanStatus;
 	

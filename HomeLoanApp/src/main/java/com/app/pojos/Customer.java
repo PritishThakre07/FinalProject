@@ -101,6 +101,9 @@ public class Customer {
 	@OneToOne(cascade = CascadeType.ALL)
 	private LoanDisbursement loandisbursement;
 	
+	
+	
+	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Ledger ledger;
 	

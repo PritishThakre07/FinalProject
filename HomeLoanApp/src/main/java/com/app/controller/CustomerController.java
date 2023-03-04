@@ -160,6 +160,7 @@ public class CustomerController {
 		List<Customer> cust=customerServiceInterface.getAllCustomer();
 		return cust;
 	}
+	
 	@GetMapping(value="/customer/{customerId}")
 	public Customer getSingleCustomer(@PathVariable("customerId")Integer customerId)
 	{
@@ -192,25 +193,25 @@ public class CustomerController {
 	
 	
 	@PutMapping(value="/sanctionloan/{customerId}")
-	public ResponseEntity<Customer> sanctionLoan(@RequestBody Customer customer,@PathVariable("customerId") Integer customerId)
+	public ResponseEntity<Customer> sanctionLoan(@RequestBody Customer customer,@PathVariable("customerId")Integer customerId)
 	{
 		
-		ResponseEntity<Customer> cust= customerServiceInterface.sanctionLoan(customer,customerId);
+		ResponseEntity<Customer> cust = customerServiceInterface.sanctionLoan(customer,customerId);
 		return cust;
 		
 	}	
 	
 	@PutMapping(value="/loandisbursement/{customerId}")
-	public String loanDisbursement(@RequestBody Customer customer, @PathVariable ("customerId") Integer customerId)
+	public String loanDisbursement(@RequestBody Customer customer,@PathVariable("customerId")Integer customerId)
 	{
-		Customer cust=customerServiceInterface.loanDisbursement(customer, customerId);
+		Customer cust = customerServiceInterface.loanDisbursement(customer, customerId);
 		return "SUCCESSFULLY DISBURST";
 		
 	}
 	
 	
 	@PutMapping(value="/sanctionletteraccepted/{customerId}")
-	public String sanctionletteraccepted(@RequestBody Customer customer, @PathVariable ("customerId") Integer customerId)
+	public String sanctionletteraccepted(@RequestBody Customer customer, @PathVariable("customerId") Integer customerId)
 	{
 		
 
