@@ -19,5 +19,6 @@ public interface EnquiryDetailsServiceI {
 	public void deleteEnquiry(int id);
 
 
-	public EnquiryDetails editEnquiry(EnquiryDetails enqury);
+	
+	
 }

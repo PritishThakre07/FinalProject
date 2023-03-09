@@ -45,8 +45,5 @@ public class EnquiryDetailsServiceImpl implements EnquiryDetailsServiceI {
 		 
 	}
 
-	@Override
-	public EnquiryDetails editEnquiry(EnquiryDetails enquiry) {
-		return edr.save(enquiry);
-	}
+	
 }

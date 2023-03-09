@@ -57,18 +57,25 @@ public class EnquiryDetailsContoller {
 	}
 	
 	@PutMapping("/enquiry/{id}")
-	public void editEnquiryApprove(@PathVariable ("id") int id, @RequestBody EnquiryDetails enqury)
+	public void editEnquiryApprove(@PathVariable ("id") int id)
 	{
-		enqury.setId(id);
-		enqury.getCibil().setRemark("APPROVED");
-		EnquiryDetails enquiryDetails=edi.editEnquiry(enqury);	 
+		
+       EnquiryDetails enq = edi.getSingleEnquiryDetails(id);
+		
+		enq.getCibil().setRemark("APPROVED");
+		
+		edi.saveEnquiryDetails(enq); 
 	}
 	
 	@PutMapping("/enquiryreject/{id}")
-	public void editEnquiryReject(@PathVariable ("id") int id, @RequestBody EnquiryDetails enqury)
+	public void editEnquiryReject(@PathVariable ("id") int id)
 	{
-		enqury.setId(id);
-		enqury.getCibil().setRemark("REJECT");
-		EnquiryDetails enquiryDetails=edi.editEnquiry(enqury);	 
+		
+		EnquiryDetails enq = edi.getSingleEnquiryDetails(id);
+		
+		enq.getCibil().setRemark("REJECT");
+		
+		edi.saveEnquiryDetails(enq);
+		
 	}
 }
